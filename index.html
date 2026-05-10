@@ -715,13 +715,14 @@ footer p{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:va
         </div>
       </div>
       <div class="rv d2">
-        <div class="ct-form">
-          <input type="text" class="ff" placeholder="Votre nom" required>
-          <input type="email" class="ff" placeholder="Votre email" required>
-          <input type="text" class="ff" placeholder="Sujet">
-          <textarea class="ff" placeholder="Votre message"></textarea>
-          <button class="fsub" id="fsub"><span>Envoyer le message →</span></button>
-        </div>
+        <form class="ct-form" id="contact-form">
+          <input type="text" class="ff" id="nom" placeholder="Votre nom" required>
+          <input type="email" class="ff" id="email" placeholder="Votre email" required>
+          <input type="text" class="ff" id="sujet" placeholder="Sujet">
+          <textarea class="ff" id="message" placeholder="Votre message" required></textarea>
+          <button class="fsub" type="submit" id="fsub"><span>Envoyer le message →</span></button>
+          <p id="form-status" style="margin-top:.8rem;font-size:.85rem;font-family:var(--font-display);letter-spacing:.06em"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -805,13 +806,7 @@ function step(){
 }
 step();
 
-/* FORM */
-const fsub=document.getElementById('fsub');
-fsub.addEventListener('click',()=>{
-  fsub.querySelector('span').textContent='Message envoyé ✓';
-  fsub.style.background='var(--cyan)';fsub.style.color='var(--bg)';
-  setTimeout(()=>{fsub.querySelector('span').textContent='Envoyer le message →';fsub.style.background='';fsub.style.color=''},3000);
-});
+/* FORM — géré par formulaire-contact.js (Firebase) */
 
 /* NAV ACTIVE ON SCROLL */
 const secs=document.querySelectorAll('section[id],[id]');
@@ -854,5 +849,6 @@ document.querySelectorAll('#hero,#about,#services,#projects,#blog,#contact').for
   draw();
 })();
 </script>
+<script type="module" src="formulaire-contact.js"></script>
 </body>
 </html>
