@@ -391,6 +391,14 @@ footer p{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:va
 .sl:hover{color:var(--cyan)}.sl:hover::after{width:100%}
 
 /* ══════════════════════════════════════════════════════════════
+   COMMENTAIRES
+══════════════════════════════════════════════════════════════ */
+.cmt-card{padding:1.2rem 1.6rem;border:1px solid var(--b);background:var(--sur);margin-bottom:.8rem;transition:border-color .3s}
+.cmt-card:hover{border-color:var(--cyan);box-shadow:0 0 12px var(--cyan-dim)}
+.cmt-author{font-family:var(--font-display);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:.4rem}
+.cmt-text{font-size:.84rem;color:var(--t2);line-height:1.75}
+
+/* ══════════════════════════════════════════════════════════════
    GLITCH TEXT
 ══════════════════════════════════════════════════════════════ */
 .glitch{position:relative}
@@ -728,6 +736,28 @@ footer p{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:va
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════════
+     COMMENTAIRES PUBLICS
+══════════════════════════════════════════════════════ -->
+<div class="sec" id="commentaires">
+  <div class="wrap">
+    <span class="sec-lbl rv">06 — Laisse un mot</span>
+    <h2 class="sec-title rv">Commentaires <em>publics</em></h2>
+    <div class="ct-grid">
+      <div class="rv d1">
+        <form id="commentaire-form" class="ct-form">
+          <input type="text" class="ff" id="auteur" placeholder="Ton nom" required>
+          <textarea class="ff" id="texte" placeholder="Ton message..." required></textarea>
+          <button type="submit" class="fsub"><span>Publier →</span></button>
+        </form>
+      </div>
+      <div class="rv d2" id="commentaires-liste">
+        <p style="color:var(--t2);font-size:.82rem;letter-spacing:.06em">Chargement...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <p>© 2026 ASSA NDIAYE — Tous droits réservés</p>
@@ -850,5 +880,6 @@ document.querySelectorAll('#hero,#about,#services,#projects,#blog,#contact').for
 })();
 </script>
 <script type="module" src="formulaire-contact.js"></script>
+<script type="module" src="commentaires.js"></script>
 </body>
 </html>
